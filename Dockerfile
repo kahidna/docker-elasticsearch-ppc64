@@ -9,9 +9,9 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 
 RUN cd /opt && curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$ESVERSION-linux-x86_64.tar.gz && \
 	tar xf elasticsearch-$ESVERSION-linux-x86_64.tar.gz && \
-	ln -s /opt/elasticsearch-$ESVERSION /opt/elasticsearch && \
+	ln -s /opt/elasticsearch-$ESVERSION /opt/elasticsearch
 
-ENV	xpack.ml.enabled=false
+ENV xpack.ml.enabled=false
 
 COPY docker-entrypoint.sh /
 
